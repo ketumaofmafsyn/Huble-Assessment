@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Calculator</title>
+    <!-- Importing Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .heading {
+            background-color: rgb(22, 22, 79);
+        }
+        .operator-btn {
+            background-color: blue;
+            color: white;
+        }
+        /* background color with linear gradient to the main content */
+
+        .calculator-container {
+            background: linear-gradient(to bottom, rgba(228, 215, 215, 0), rgb(197, 155, 233)); 
+            padding: 20px; 
+        }
+    </style>
+</head>
+<body class="overlay">
+    <div class="container mt-5" style="border: solid 4px rgb(4, 4, 75);
+     background: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(102, 4, 188));">
+        <div class="heading">
+            <h4 class="text-center"
+                style="font-weight: lighter;font-family: 'Courier New', monospace; color: aliceblue;">
+                Arithmetic Calculator
+            </h4>
+        </div>
+        <p class="text-center align-items-center" ><span style="font-weight: lighter;
+        font-family: 'Courier New', monospace;
+            color:#C70039;font-size: large;"><b>NB*</b> </span>
+        <span style="font-weight: lighter;font-family: Garamond, serif;
+         color: rgb(22, 22, 79);font-size: small;">Please note that, after you enter the first number you 
+         have to select operator of your choice only, we will grant you access to enter second 
+         number then you can calculate accordingly!</span>
+        </p>
+        <div class="card p-4 text-center align-items-center calculator-container" 
+        style="margin-top: 1.5rem; border: solid 1px #C70039;">
+            <div class="col-md-4 text-center align-items-center mb-2">
+                <input type="number" class="form-control mb-2" id="num1"
+                    placeholder="Enter first number" style="width: 20.3rem;
+                     height: 5rem;">
+                <input type="number" class="form-control mb-2" id="num2"
+                    placeholder="Enter second number" style="display: none; width: 20.3rem;
+                     height: 5rem;">
+            </div>
+            <div class="col-md-4 col-lg-6 text-center align-items-center mb-4">
+                <button type="button" class="btn btn-primary operator-btn w-15" data-operator="+"
+                    style="width: 4.9rem;height: 3rem; background-color: rgb(22, 22, 79);">+</button>
+                <button type="button" class="btn btn-primary operator-btn w-15" data-operator="-"
+                    style="width: 4.9rem;height: 3rem; background-color: rgb(22, 22, 79);">-</button>
+                <button type="button" class="btn btn-primary operator-btn w-15" data-operator="*"
+                    style="width: 4.9rem;height: 3rem; background-color: rgb(22, 22, 79);">*</button>
+                <button type="button" class="btn btn-primary operator-btn w-15" data-operator="/"
+                    style="width: 4.9rem;height: 3rem; background-color: rgb(22, 22, 79);">/</button>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" id="calculateBtn"
+                    style="width: 20.3rem;height: 3rem;font-family: Garamond, serif;
+                    font-size: larger;
+                     background-color: rgb(22, 22, 79);"><span>Calculate</span></button>
+            </div>
+        </div>
+        <div class="card mt-4 p-4 calculator-container" style="margin-bottom: 2.8rem;
+        border: solid 1px #C70039">
+            <h6 class="text-center" style="font-weight: bold;
+            font-family: 'Courier New', monospace;">
+                <u> See your output below:</u>
+            </h6>
+            <p id="result" class="text-center"></p>
+        </div>
+    </div>
+
+    <!-- Scripts for Accessing Bootstrap Javascript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

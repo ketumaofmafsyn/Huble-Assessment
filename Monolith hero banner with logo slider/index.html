@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Monolith hero banner with logo slider</title>
+    <style>
+        body {
+            background-image: url('./image/Group_39403_min.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background: linear-gradient(to bottom, rgba(228, 215, 215, 0), rgb(197, 155, 233)),
+            /* Second background: Image */
+            url('./image/Group_39403_min.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            border-radius: 0px;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .container {
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-size: 54px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .btn-uppercase {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 550;
+        }
+
+        /* Style for logos */
+        .logo-slider-container {
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 200px; 
+        }
+
+        .logo-slider {
+            white-space: nowrap;
+            animation: moveLeft 20s linear infinite; 
+        }
+
+        .logo-slide {
+            display: inline-block;
+            max-width: 150px;
+            vertical-align: middle;
+            margin-right: 50px; 
+            opacity: 1;
+            transition: opacity 1s ease-in-out, transform 0.3s ease-in-out; 
+            animation: popUp 2s ease-in-out, fadeIn 2s ease-in-out, moveLeft 20s linear infinite; 
+        }
+
+        /* Pause animation on hover */
+        .logo-slide:hover {
+            animation-play-state: paused;
+            filter: grayscale(100%); 
+            transform: scale(0.9); 
+            cursor: pointer;
+            hover-background:green; 
+        }
+
+        /* Keyframes for animation */
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(0); /* Change starting position to 0 */
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7" style="margin-bottom: 3rem;">
+                <h6 style="margin-top: 4.5rem;color: rgba(255,90,95,1.0);
+                font-weight: 700;font-size: 20px;">Monolith</h6>
+                <h1 style="font-size: 54px; color: #ffffff;">Test Less. Learn More.</h1>
+                <p style="font-size: 18px; color: #ffffff;">Spend less time running expensive, repetitive tests and more time learning from your engineering data to predict the exact tests to run.</p>
+            </div>
+            <div class="col-md-5">
+              
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" style="margin-bottom: 4rem !important;">
+                <button class="btn btn-primary rounded-pill btn-lg btn-uppercase"
+                        style="width: 16rem;height: 4rem;background-color: rgba(255,90,95,1.0);
+                        border: solid 3px white; color: white;"
+                        data-toggle="modal" data-target="#demoPanel">Request Demo</button>
+
+                <!-- Modal with Form -->
+                <div class="modal fade" id="demoPanel" tabindex="-1" role="dialog" aria-labelledby="demoPanelLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header"  style="margin-right: -4em;">
+                                <h5 class="modal-title" id="demoPanelLabel">Request a Demo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn rounded-pill btn-lg btn-uppercase"
+                        style="width: 16rem;height: 4rem;background-color: none;
+                        border: solid 3px rgba(255,90,95,1.0);color: white;"
+                        data-toggle="modal" data-target="#ourTeam">Speak to our Team</button>
+                <!-- Modal with Form -->
+                <div class="modal fade" id="ourTeam" tabindex="-1" role="dialog" aria-labelledby="ourTeamLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="ourTeamLabel" style="color: #ffffff;">
+                                    <span>Speak to our Team</span></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Form content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                
+            </div>
+            <div class="col-md-3">
+              
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Logo Slider Section -->
+                <section id="logoSlider">
+                    <div class="container-fluid">
+                        <div class="logo-slider-container">
+                            <div class="logo-slider">
+                                <div class="logo-slide">
+                                    <a href="#" target="">
+                                        <img src="./image/BMW_logo_(gray)_4_w_66.webp" alt="BMW" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="logo-slide">
+                                    <img src="./image/bae-systems_logo.svg" alt="BAE Systems" class="img-fluid">
+                                </div>
+                                <div class="logo-slide">
+                                    <img src="./image/mercedes-benz_logo.webp" alt="Mercedes" class="img-fluid">
+                                </div>
+                                <div class="logo-slide">
+                                    <img src="./image/honda_logo.svg" alt="Honda" class="img-fluid">
+                                </div>
+                                <div class="logo-slide">
+                                    <img src="./image/Siemens_logo.svg" alt="Siemens" class="img-fluid">
+                                </div>
+                                <div class="logo-slide">
+                                    <a href="#" target="">
+                                        <img src="./image/honeywell-1-logo-black-and-white.webp" alt="Honeywell" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="logo-slide">
+                                    <a href="#" target="">
+                                       <img src="./image/Kautex_Textron_Logo_Bw-1.webp" alt="Kautex" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="logo-slide">
+                                    <a href="#" target="">
+                                        <img src="./image/michelin-tire-logo.webp" alt="michelin" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="logo-slide" >
+                                    <a href="#" target="">
+                                        <img src="./image/Aptar Logo.svg" alt="Aptar" class="img-fluid"
+                                        style="margin-right: 2rem;">
+                                    </a>
+                                </div>
+                                <div class="logo-slide">
+                                    <a href="#" target="">
+                                        <img src="./image/JOTA_logo.webp" alt="JOTA" class="img-fluid">
+                                    </a>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </section>
+              
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Pause animation on hover for all logo slides
+        $('.logo-slide').hover(function() {
+            $('.logo-slider').css('animation-play-state', 'paused');
+        }, function() {
+            $('.logo-slider').css('animation-play-state', 'running');
+        });
+    </script>
+</body>
+</html>
